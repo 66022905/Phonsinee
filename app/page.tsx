@@ -1,101 +1,124 @@
-import Image from "next/image";
+import Head from 'next/head';
+import Image from 'next/image'; // Import Image from next/image for optimized image handling
 
-export default function Home() {
+const Nexts: React.FC = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="bg-gray-900 text-white min-h-screen">
+      <Head>
+        <title>Professional Resume</title>
+        <meta name="description" content="Professional Resume Template" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+      <header className="bg-gradient-to-r from-pink-400 to-yellow-600 text-gray-900 py-6">
+        <h1 className="text-4xl font-bold text-center">FRONT-END DEVELOPER</h1>
+      </header>
+
+      <main className="container mx-auto px-6 py-8 grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Left Column */}
+        <aside className="lg:col-span-1 bg-gray-800 p-6 rounded-lg shadow">
+          {/* Profile Section */}
+          <section className="text-center mb-10">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/B.jpg" // Ensure that "B.jpg" is located in the 'public' folder
+              alt="Profile Picture"
+              width={160} // specify width
+              height={160} // specify height
+              className="rounded-full mx-auto m-6 border-4 border-pink-300"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <h2 className="text-2xl font-semibold text-pink-400 mb-4">PHONSINEE KITCHAAUM</h2>
+            <p className="text-gray-400">
+              Passionate developer specializing in scalable web applications and modern design.
+            </p>
+          </section>
+
+          {/* Contact Section */}
+          <section className="mb-10">
+            <h3 className="text-xl font-semibold text-pink-400">Contact</h3>
+            <p>Email: <a href="mailto:66022804@up.ac.th" className="text-pink-300 underline">66022804@up.ac.th</a></p>
+            <p>facebook: <a href="https://www.facebook.com/profile.php?id=100012835871553" className="text-pink-300 underline">Phonsinee Kitchaaum</a></p>
+            <p>instagram: <a href="https://www.instagram.com/gift._028/" className="text-pink-300 underline">gift._028</a></p>
+            <p>github: <a href="https://github.com/66022804" className="text-pink-300 underline">6622804</a></p>
+          </section>
+
+          {/* Skills Section */}
+          <section>
+            <h3 className="text-xl font-semibold text-pink-400">Skills</h3>
+            <ul className="list-disc list-inside text-gray-400">
+              <li>HTML</li>
+              <li>TailwindCSS</li>
+              <li>Next.js</li>
+              <li>UI/UX Designer</li>
+            </ul>
+          </section>
+        </aside>
+
+        {/* Right Column */}
+        <div className="lg:col-span-2 bg-gray-800 p-6 rounded-lg shadow">
+          {/* Experience Section */}
+          <section className="mb-6">
+            <h3 className="text-2xl font-semibold text-sky-300 mb-4">About me</h3>
+            <div className="mb-4">
+              <h4 className="text-lg font-medium">
+                Hello, my name is Ms. Phonsinee Kitchaaum. My nickname is Gift. I am currently studying at Phayao
+                University, Faculty of Information and Communication Technology, Software Engineering Program, 2nd year.
+              </h4>
+              <p className="text-sm text-gray-400">11 November 2024</p>
+            </div>
+          </section>
+
+          {/* Projects Section */}
+          <section className="mb-6">
+            <h3 className="text-2xl font-semibold text-sky-300 mb-4">Projects</h3>
+            <div className="mb-4">
+              <h4 className="text-lg font-medium">Coding website Project</h4>
+              <p>
+                A website for practicing programming, with an answer checking system, supporting multiple languages, and
+                won first place in the 2nd year project competition within the department. It is a project in the
+                subject of databases and software processes.
+              </p>
+            </div>
+            <div>
+              <h4 className="text-lg font-medium">Feature</h4>
+              <ul className="list-disc list-inside">
+                <li>Can practice doing questions</li>
+                <li>Have ranking of scores in doing questions</li>
+                <li>Have profile showing doing questions</li>
+                <li>Can create/edit/delete/view questions</li>
+                <li>Can create test cases for questions in both random and correct answer types and write code answers</li>
+                <li>Can manage various topics</li>
+                <li>Can manage admins (add/delete/edit)</li>
+                <li>Can send notifications to users (individually/groups/everyone)</li>
+                <li>Can save questions of interest</li>
+                <li>Answer checking system supports python 3, python 2, c, c++, c#, golang, php, rust, lua, java, javascript, typescript</li>
+                <li>Have LLM system (Gemini-1.5-flash) to help check, write prompts to check conditions</li>
+                <li>Can search for questions to use (lexical + semantic)</li>
+              </ul>
+            </div>
+
+            <div className="mt-4">
+              <p>
+                coding-web-frontend{' '}
+                <a href="https://github.com/korarit/coding-web-frontend.git" className="text-yellow-200 underline">
+                  LINK
+                </a>
+              </p>
+              <p>
+                Figma Coding Website Project{' '}
+                <a href="https://www.figma.com/design/cPyGfpF9ZkJYBGb6I80h0O/UX%2FUI-coding-web-project" className="text-yellow-200 underline">
+                  LINK
+                </a>
+              </p>
+            </div>
+          </section>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      <footer className="bg-gray-900 text-center p-4">
+        <p className="text-gray-500">&copy; 2024 Your Name. All rights reserved.</p>
       </footer>
     </div>
   );
-}
+};
+
+export default Nexts;
